@@ -22,7 +22,7 @@ export default function RegisterCustomer(){
     if(p.length<8){setError("Password must be at least 8 characters");return}
     setLoading(true);setError("")
     try{
-      const res=await api.post("/api/auth/register/customer",{name:form.name,email:form.email,phone:form.phone,password:form.password})
+      const res=await api.post("/api/auth/register-customer",{name:form.name,email:form.email,phone:form.phone,password:form.password})
       login(res.data);navigate("/dashboard",{replace:true})
     }catch(err){setError(err.response?.data?.message||"Registration failed")}
     setLoading(false)

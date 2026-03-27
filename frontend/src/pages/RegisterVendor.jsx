@@ -23,7 +23,7 @@ export default function RegisterVendor(){
     if(p.length<8){setError("Password must be at least 8 characters");return}
     setLoading(true);setError("")
     try{
-      const res=await api.post("/api/auth/register/vendor",{name:form.name,email:form.email,phone:form.phone,shopName:form.shopName,password:form.password})
+      const res=await api.post("/api/auth/register-vendor",{name:form.name,email:form.email,phone:form.phone,shopName:form.shopName,password:form.password})
       const r=login(res.data)
       navigate("/vendor/dashboard",{replace:true})
     }catch(err){setError(err.response?.data?.message||"Registration failed")}
