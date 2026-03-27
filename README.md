@@ -16,10 +16,6 @@ CREATE TABLE IF NOT EXISTS admin_credentials (
     name VARCHAR(100) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-INSERT INTO admin_credentials (email, password, name)
-VALUES ('nagarajdhanush88@gmail.com', 'dhanush', 'Dhanush Admin')
-ON DUPLICATE KEY UPDATE name=name;
 ```
 
 ### Step 2: Start Backend
@@ -36,16 +32,6 @@ npm install
 npm run dev
 ```
 Frontend runs on: http://localhost:5173
-
----
-
-## CREDENTIALS
-
-| Role     | Email                        | Password |
-|----------|------------------------------|----------|
-| Admin    | nagarajdhanush88@gmail.com   | dhanush  |
-| Customer | customer@test.com            | password |
-| Vendor   | murugan@vendor.com           | password |
 
 ---
 
